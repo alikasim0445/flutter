@@ -1,8 +1,8 @@
+import 'package:firebase/auth/authPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'homePage.dart';
-import 'loginPage.dart';
+import '../page/homePage.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -25,7 +25,7 @@ class MainPage extends StatelessWidget {
         }
 
         // User is not logged in, show LoginPage
-        return const LoginPage();
+        return const AuthPage();
       },
     );
   }
