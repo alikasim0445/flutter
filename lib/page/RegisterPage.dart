@@ -108,9 +108,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: TextField(
                           controller: _emailController,
                           cursorColor: Colors.black,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
+                          decoration: InputDecoration(
                             hintText: "Email",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            prefixIcon: const Icon(Icons.email),
                           ),
                         ),
                       ),
@@ -131,9 +134,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: TextField(
                           controller: _passwordController,
                           obscureText: true,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
+                          decoration: InputDecoration(
                             hintText: "Password",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            prefixIcon: const Icon(Icons.password_outlined),
                           ),
                         ),
                       ),
@@ -154,9 +160,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: TextField(
                           controller: _confirmPasswordController,
                           obscureText: true,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
+                          decoration: InputDecoration(
                             hintText: "Confirm Password",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            prefixIcon: const Icon(Icons.password_outlined),
                           ),
                         ),
                       ),

@@ -1,3 +1,4 @@
+import 'package:firebase/page/ForgotPasswordPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -87,23 +88,23 @@ class LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20),
                         child: TextField(
                           controller: _emailController,
                           cursorColor: Colors.black,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
+                          decoration: InputDecoration(
                             hintText: "Email",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            prefixIcon: const Icon(Icons.email),
                           ),
                         ),
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 20),
 
                   // Password TextField
@@ -119,15 +120,43 @@ class LoginPageState extends State<LoginPage> {
                         child: TextField(
                           controller: _passwordController,
                           obscureText: true,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
+                          decoration: InputDecoration(
                             hintText: "Password",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            prefixIcon: const Icon(Icons.password_rounded),
                           ),
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 30),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ForgotPasswordPage()),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.only(right: 25),
+                          child: Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
 
                   // Sign In Button
                   ElevatedButton(
